@@ -7,7 +7,7 @@ const nextConfig = {
   return [
     {
       source: "/api/:path*",
-      destination: "http://scrapebackend:3001/api/:path*",
+      destination: "https://scrapebackend-production.up.railway.app/api/:path*",
     },
   ];
 }
