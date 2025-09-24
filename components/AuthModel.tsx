@@ -19,7 +19,7 @@ export default function AuthModal() {
 
   const registerMutation = useMutation({
     mutationFn: async () => {
-      const res = await fetch('http://localhost:3001/api/auth/register', {
+      const res = await fetch('https://scrapebackend-production.up.railway.app/api/auth/register', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form),
@@ -36,7 +36,7 @@ export default function AuthModal() {
 
   const loginMutation = useMutation({
     mutationFn: async () => {
-      const res = await fetch('http://localhost:3001/api/auth/login', {
+      const res = await fetch('https://scrapebackend-production.up.railway.app/api/auth/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form),
