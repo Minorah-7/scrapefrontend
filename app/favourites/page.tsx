@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 async function fetchFavourites() {
-  const res = await fetch(`/api/favourites`, {
+  const res = await fetch(`https://scrapebackend-production.up.railway.app/api/favourites`, {
     headers: {
       Authorization: `Bearer ${localStorage.getItem("token")}`,
     },

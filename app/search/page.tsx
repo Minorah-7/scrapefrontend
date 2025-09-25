@@ -18,7 +18,7 @@ type Product = {
 
 // Fetch search results
 async function searchProducts(query: string, page: number) {
-  const res = await fetch(`/api/search?q=${query}&page=${page}&limit=10`);
+  const res = await fetch(`https://scrapebackend-production.up.railway.app/api/search?q=${query}&page=${page}&limit=10`);
   if (!res.ok) throw new Error("Failed to fetch search results");
   return res.json() as Promise<Product[]>;
 }

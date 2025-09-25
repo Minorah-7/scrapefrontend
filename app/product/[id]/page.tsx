@@ -19,19 +19,19 @@ type Product = {
 };
 
 async function fetchProduct(id: string) {
-  const res = await fetch(`/api/products/${id}`);
+  const res = await fetch(`https://scrapebackend-production.up.railway.app/api/products/${id}`);
   if (!res.ok) throw new Error("Failed to fetch product");
   return res.json();
 }
 
 async function fetchRelated(id: string) {
-  const res = await fetch(`/api/products/${id}/related`);
+  const res = await fetch(`https://scrapebackend-production.up.railway.app/api/products/${id}/related`);
   if (!res.ok) throw new Error("Failed to fetch related products");
   return res.json() as Promise<Product[]>;
 }
 
 async function addToFavourites(productId: string) {
-  const res = await fetch(`/api/favourites/${productId}`, {
+  const res = await fetch(`https://scrapebackend-production.up.railway.app/api/favourites/${productId}`, {
     method: "POST",
     headers: {
       Authorization: `Bearer ${localStorage.getItem("token")}`,

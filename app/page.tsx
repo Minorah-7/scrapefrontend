@@ -16,14 +16,14 @@ type Navigation = {
 
 // Fetch navigation
 async function fetchNavigation(): Promise<Navigation[]> {
-  const res = await fetch("/api/navigation");
+  const res = await fetch("https://scrapebackend-production.up.railway.app/api/navigation");
   if (!res.ok) throw new Error("Failed to load navigation");
   return res.json();
 }
 
 // Trigger scrape if DB is empty
 async function scrapeNavigation(): Promise<Navigation[]> {
-  const res = await fetch("/api/navigation/scrape", { method: "POST" });
+  const res = await fetch("https://scrapebackend-production.up.railway.app/api/navigation/scrape", { method: "POST" });
   if (!res.ok) throw new Error("Scraping failed");
   return res.json();
 }

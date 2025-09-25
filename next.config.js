@@ -4,14 +4,13 @@ const nextConfig = {
     domains: ["via.placeholder.com"], // 👈 allow this domain
   },
   async rewrites() {
-  return [
-    {
-      source: "/api/:path*",
-      destination: process.env.NEXT_PUBLIC_API_URL + "/:path*",
-    },
-  ];
-}
-
+    return [
+      {
+        source: "/api/:path*",
+        destination: "https://scrapebackend-production.up.railway.app/api/:path*",
+      },
+    ];
+  },
 };
 
 module.exports = nextConfig;

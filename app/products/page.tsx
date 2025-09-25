@@ -17,7 +17,7 @@ type Product = {
 // Function to fetch products based on category ID
 async function fetchProductsByCategory(categoryId: string): Promise<Product[]> {
   // Updated API call as requested
-  const res = await fetch(`/api/categories/${categoryId}/products`);
+  const res = await fetch(`https://scrapebackend-production.up.railway.app/api/categories/${categoryId}/products`);
   if (!res.ok) throw new Error('Failed to fetch products');
   return res.json();
 }
